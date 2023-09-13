@@ -9,32 +9,32 @@ class OnboardingPage extends StatelessWidget {
 
   final data = [
     CardPlanetData(
-      title: "observe",
+      title: "Pactica 1",
       subtitle:
           "The night sky has much to offer to those who seek its mystery.",
       image: const AssetImage("aguacate.png"),
       backgroundColor: const Color.fromRGBO(0, 10, 56, 1),
       titleColor: Colors.pink,
       subtitleColor: Colors.white,
-      background: LottieBuilder.asset("bg1.json"),
+      background: LottieBuilder.asset("moradito.json"),
     ),
     CardPlanetData(
-      title: "imagine",
+      title: "Ingenieria en Sistemas Computacionales",
       subtitle: "An endless number of galaxies means endless possibilities.",
       image: const AssetImage("aguacate.png"),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.green,
       titleColor: Colors.purple,
       subtitleColor: const Color.fromRGBO(0, 10, 56, 1),
-      background: LottieBuilder.asset("bg1.json"),
+      background: LottieBuilder.asset("moradito.json"),
     ),
     CardPlanetData(
-      title: "stargaze",
+      title: "Instituto Tecnologico de Celaya",
       subtitle: "The sky dome is a beautiful graveyard of stars.",
-      image: const AssetImage("assets/images/img-3.png"),
+      image: const AssetImage("aguacate.png"),
       backgroundColor: const Color.fromRGBO(71, 59, 117, 1),
       titleColor: Colors.yellow,
       subtitleColor: Colors.white,
-      //background: LottieBuilder.asset("assets/animation/bg-3.json"),
+      background: LottieBuilder.asset("moradito.json"),
     ),
   ];
 

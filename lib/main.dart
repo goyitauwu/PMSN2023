@@ -4,7 +4,7 @@ import 'package:pmsn20232/routes.dart';
 import 'package:pmsn20232/screens/login_screen.dart';
 import 'assets/global_values.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       valueListenable: GlobalValues.flagTheme,
       builder: (context, value, _) {
         return MaterialApp(
-          home: LoginScreen(),
+          home: const LoginScreen(),
           routes: getRoutes(),
           theme: value
           ?StyleApp.darkTheme(context)
