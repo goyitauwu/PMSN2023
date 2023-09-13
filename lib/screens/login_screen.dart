@@ -14,34 +14,40 @@ class _LoginScreenState extends State<LoginScreen> {
     TextEditingController txtConUser = TextEditingController();
     TextEditingController txtConPass = TextEditingController();
 
+    const spaceHorizontal = SizedBox(height: 10,);
+    
     //declaracion de los elementos
-    final imgLogo = Container(
-      width: 400,
+    /*final imgLogo = Container(
+      width: 200,
         decoration: const BoxDecoration( 
           image: DecorationImage(
-            image: NetworkImage('https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png')
+            image: AssetImage('logoesp.png')
          )
         ),
-      );
+      );*/
+
+    final imgLogo = Image.asset('logoesp.png', height: 200,);
 
     final txtUser = TextField(
       controller: txtConUser,
       decoration: const InputDecoration(
-        border: OutlineInputBorder()
+        border: OutlineInputBorder(),
+        label: Text('Correo')
       ),
     );
 
     final txtPass = TextField(
       controller: txtConPass,
       decoration: const InputDecoration(
-        border: OutlineInputBorder()
+        border: OutlineInputBorder(),
+        label: Text('Contraseña')
       ),
       obscureText: true,
     );
 
     final btnEntrar = FloatingActionButton.extended(
-      icon: Icon(Icons.login),
-      label: Text('Entrar'),
+      icon: const Icon(Icons.login),
+      label: const Text('Entrar'),
       onPressed: (){
       //onPressed: () => Navigator.pushNamed(context, '/dash');
         Navigator.pushNamed(context, '/dash');
@@ -49,14 +55,14 @@ class _LoginScreenState extends State<LoginScreen> {
     );
     
     //construccion de la pantalla login
-    return Scaffold(
+    /* return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration( 
           image: DecorationImage(
             opacity: .7,
             fit: BoxFit.cover,
-            image: NetworkImage('https://e0.pxfuel.com/wallpapers/835/942/desktop-wallpaper-resultado-de-n-para-fondos-de-pantalla-para-celular-tumblr-totoro-design.jpg')
+            image: AssetImage('fondoesp.jpg')
          )
         ),
         child: Padding(
@@ -66,12 +72,12 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Container(
                 height: 200,
-                padding: EdgeInsets.all(30),
-                margin: EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.all(30),
+                margin: const EdgeInsets.symmetric(horizontal: 30),
                 //color: Colors.white,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.white
+                  //color: Colors.white
                 ),
                 child: Column(
                   children: [
@@ -88,6 +94,47 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: btnEntrar,
+    ); */
+
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                opacity: .4,
+                fit: BoxFit.cover,
+                image: AssetImage('fondoesp.jpg')
+              )
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      txtUser,
+                      spaceHorizontal,
+                      txtPass,
+                      spaceHorizontal,
+                      btnEntrar,
+                      spaceHorizontal,
+                    ],
+                  ),
+                  Positioned(
+                    top: 100,
+                    child: imgLogo,
+                  )
+                ],
+              ),
+            ),
+          ),
+          //isLoading ? const LoadingModalWidget() : Container()
+        ],
+      ),
     );
   }
 }

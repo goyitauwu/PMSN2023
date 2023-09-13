@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../assets/global_values.dart';
 
 class DashboardScreen extends StatefulWidget {
-  DashboardScreen({super.key});
+  const DashboardScreen({super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -16,7 +16,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bienvenidos :)'),
+        title: const Text('Bienvenidos :)'),
       ),
       drawer: createDrawer(),
     );
@@ -28,7 +28,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         children: [
           const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
-              backgroundImage: NetworkImage('https://i.pravatar.cc/300'),
+              backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/102234549?v=4'),
             ),
             accountName: Text('Siddhartha Ariel F.'),
             accountEmail: Text('18031781@itcelaya.edu.mx')
@@ -37,11 +37,34 @@ class _DashboardScreenState extends State<DashboardScreen> {
             //leading: Icon(Icons.mouse),
             //leading: Image.network('https://cdn3.iconfinder.com/data/icons/materia-flat-halloween-free/24/039_026_cat_black_witch_halloween-512.png'),
             leading: Image.asset('assets/aguacate.png'),
-            trailing: Icon(Icons.chevron_right),
-            title: Text('FruitApp'),
-            subtitle: Text('Carrusel'),
+            trailing: const Icon(Icons.chevron_right),
+            title: const Text('FruitApp'),
+            subtitle: const Text('Carrusel'),
             onTap: (){},
           ),
+
+          ListTile(
+            leading: Image.asset('p1.png'),
+            trailing: const Icon(Icons.chevron_right),
+            title: const Text('Practica 1'),
+            subtitle: const Text('Onboarding Screen'),
+            onTap: (){
+              Navigator.pushNamed(context, '/onboard');
+            },
+          ),
+
+          ListTile(
+            leading: Image.asset('p2.png'),
+            trailing: const Icon(Icons.chevron_right),
+            title: const Text('Practica 2'),
+            subtitle: const Text('UI Challenge Fruit App'),
+            onTap: (){},
+          ),
+
+
+
+
+
           DayNightSwitcher(
             isDarkModeEnabled: GlobalValues.flagTheme.value,
             onStateChanged: (isDarkModeEnabled) {
