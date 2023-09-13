@@ -4,7 +4,6 @@ class StyleApp{
   static ThemeData lightTheme(BuildContext context){
     final theme = ThemeData.light();
     return theme.copyWith(
-      //primaryColor: Color.fromARGB(255, 255, 100, 50),
       colorScheme: Theme.of(context).colorScheme.copyWith(
         primary: const Color.fromARGB(255, 145, 240, 160),
       )

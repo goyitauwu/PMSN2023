@@ -30,12 +30,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/102234549?v=4'),
             ),
-            accountName: Text('Siddhartha Ariel F.'),
-            accountEmail: Text('18031781@itcelaya.edu.mx')
+            accountName: Text('Alan Saúl Sánchez Díaz'),
+            accountEmail: Text('18030493@itcelaya.edu.mx')
           ),
           ListTile(
-            //leading: Icon(Icons.mouse),
-            //leading: Image.network('https://cdn3.iconfinder.com/data/icons/materia-flat-halloween-free/24/039_026_cat_black_witch_halloween-512.png'),
             leading: Image.asset('assets/aguacate.png'),
             trailing: const Icon(Icons.chevron_right),
             title: const Text('FruitApp'),
@@ -58,7 +56,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
             trailing: const Icon(Icons.chevron_right),
             title: const Text('Practica 2'),
             subtitle: const Text('UI Challenge Fruit App'),
-            onTap: (){},
+            onTap: (){
+              Navigator.pushNamed(context, '/uicha');
+            },
           ),
 
 

@@ -12,6 +12,7 @@ dependencies:
   shared_preferences: ^2.2.1
   concentric_transition: ^1.0.3
   lottie: ^2.6.0
+  carousel_slider: ^4.2.1
 
   flutter:
     sdk: flutter
