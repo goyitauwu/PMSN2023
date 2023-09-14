@@ -33,13 +33,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             accountName: Text('Alan Saúl Sánchez Díaz'),
             accountEmail: Text('18030493@itcelaya.edu.mx')
           ),
-          ListTile(
-            leading: Image.asset('assets/aguacate.png'),
-            trailing: const Icon(Icons.chevron_right),
-            title: const Text('FruitApp'),
-            subtitle: const Text('Carrusel'),
-            onTap: (){},
-          ),
 
           ListTile(
             leading: Image.asset('p1.png'),
@@ -60,10 +53,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
               Navigator.pushNamed(context, '/uicha');
             },
           ),
-
-
-
-
 
           DayNightSwitcher(
             isDarkModeEnabled: GlobalValues.flagTheme.value,

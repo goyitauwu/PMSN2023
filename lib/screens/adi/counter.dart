@@ -15,14 +15,14 @@ class _CounterDesign extends State<CounterDesign> {
   void add() {
     setState(() {
       _n++;
-      _amt = _amt + 10;
+      _amt = _amt + 15;
     });
   }
 
   void minus() {
     setState(() {
       if (_n != 0) _n--;
-      _amt = _amt - 10;
+      _amt = _amt - 15;
     });
   }
 
@@ -31,7 +31,7 @@ class _CounterDesign extends State<CounterDesign> {
     return Row(
       children: <Widget>[
         Container(
-          width: 155.0,
+          width: 160.0,
           decoration: BoxDecoration(
             color: Colors.blueGrey[50],
             borderRadius: BorderRadius.circular(20.0),
@@ -50,7 +50,7 @@ class _CounterDesign extends State<CounterDesign> {
               const SizedBox(
                 width: 10.0,
               ),
-              new Text('$_n', style: new TextStyle(fontSize: 30.0)),
+              new Text('$_n', style: new TextStyle(fontSize: 20.0)),
               const SizedBox(
                 width: 10.0,
               ),
@@ -70,14 +70,14 @@ class _CounterDesign extends State<CounterDesign> {
           ),
         ),
         const SizedBox(
-          width: 100.0,
+          width: 80.0,
         ),
         Container(
             child: Text(
-          'Rs $_amt',
+          'MXN $_amt',
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 30.0,
+            fontSize: 20.0,
           ),
         )),
       ],

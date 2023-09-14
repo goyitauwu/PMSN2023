@@ -84,7 +84,7 @@ class _FrutasScreenState extends State<FrutasScreen> {
                             height: 20.0,
                           ),
                           const Text(
-                            'Mango',
+                            'Pin Planeta Tierra',
                             style: TextStyle(
                                 fontSize: 30.0, fontWeight: FontWeight.bold),
                           ),
@@ -100,7 +100,7 @@ class _FrutasScreenState extends State<FrutasScreen> {
                             height: 30.0,
                           ),
                           const Text(
-                            'Product Description',
+                            'Descripcion',
                             style: TextStyle(
                                 fontSize: 20.0, fontWeight: FontWeight.bold),
                           ),
@@ -108,10 +108,10 @@ class _FrutasScreenState extends State<FrutasScreen> {
                             height: 15.0,
                           ),
                           const Text(
-                            'A mango is a type of fruit. '
-                            'The mango tree is native to South Asia, '
-                            'from where it has been taken to become one of the most widely cultivated fruits in the tropics.'
-                            'It is harvested in the month of march (summer season) till the end of May.',
+                            'Llamamos Tierra al planeta en el que habitamos.'
+                            'Es el tercer planeta del sistema solar comenzando a contar desde el Sol. '
+                            'Su nombre proviene del latín Terra, una deidad romana equivalente a la Gea de los antiguos griegos.'
+                            'Lleva tu pin ahora.',
                             style:
                                 TextStyle(letterSpacing: 2.0, fontSize: 15.0),
                           ),
@@ -154,7 +154,7 @@ class _FrutasScreenState extends State<FrutasScreen> {
                                 child: ElevatedButton(
                                   onPressed: () {},
                                   child: const Text(
-                                    'Add to cart',
+                                    'Añadir',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
