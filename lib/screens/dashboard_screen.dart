@@ -1,10 +1,9 @@
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter/material.dart';
-
 import '../assets/global_values.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
+  DashboardScreen({super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -12,17 +11,43 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
 
+   //final imglogo = Image.asset('assets/dashlogo.gif', height: 350, width: 350);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bienvenidos :)'),
+        title: const Text('Bienvenidos'),
       ),
-      drawer: createDrawer(),
+      body: Stack(
+          children: [
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    ListView(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                              //imglogo,
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      drawer: createDrawer(context),
     );
   }
 
-  Widget createDrawer(){
+  Widget createDrawer(context){
     return Drawer(
       child: ListView(
         children: [
@@ -30,36 +55,50 @@ class _DashboardScreenState extends State<DashboardScreen> {
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage('https://avatars.githubusercontent.com/u/102234549?v=4'),
             ),
-            accountName: Text('Alan Saúl Sánchez Díaz'),
-            accountEmail: Text('18030493@itcelaya.edu.mx')
+            accountName: Text('Alan Sanchez'),
+            accountEmail: Text('saulsanchezd@hotmail.com')
           ),
-
-          ListTile(
-            leading: Image.asset('p1.png'),
-            trailing: const Icon(Icons.chevron_right),
-            title: const Text('Practica 1'),
-            subtitle: const Text('Onboarding Screen'),
-            onTap: (){
-              Navigator.pushNamed(context, '/onboard');
-            },
-          ),
-
-          ListTile(
-            leading: Image.asset('p2.png'),
-            trailing: const Icon(Icons.chevron_right),
-            title: const Text('Practica 2'),
-            subtitle: const Text('UI Challenge Fruit App'),
-            onTap: (){
-              Navigator.pushNamed(context, '/uicha');
-            },
-          ),
-
           DayNightSwitcher(
             isDarkModeEnabled: GlobalValues.flagTheme.value,
             onStateChanged: (isDarkModeEnabled) {
-              setState(() {
-                GlobalValues.flagTheme.value= isDarkModeEnabled;
-              });
+              GlobalValues.teme.setBool('teme', isDarkModeEnabled);
+              GlobalValues.flagTheme.value = isDarkModeEnabled;
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.school, color: Theme.of(context).iconTheme.color),
+            trailing: Icon(Icons.chevron_right, color: Theme.of(context).iconTheme.color),
+            title: const Text('Tareas'),
+            subtitle: const Text('Practica 4'),
+            onTap: () {
+              Navigator.pushNamed(context, '/practica4');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.movie, color: Theme.of(context).iconTheme.color),
+            trailing: Icon(Icons.chevron_right, color: Theme.of(context).iconTheme.color),
+            title: const Text('Movies'),
+            subtitle: const Text('Practica 5'),
+            onTap: ()=> Navigator.pushNamed(context, '/popular2'),
+          ),
+          ListTile(
+            leading: Icon(Icons.map, color: Theme.of(context).iconTheme.color),
+            trailing: Icon(Icons.chevron_right, color: Theme.of(context).iconTheme.color),
+            title: const Text('Mapas'),
+            subtitle: const Text('Practica 6'),
+            onTap: () {
+              Navigator.pushNamed(context, '/maps2');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.logout, color: Theme.of(context).iconTheme.color),
+            trailing: Icon(Icons.chevron_right, color: Theme.of(context).iconTheme.color),
+            title: const Text('Logout'),
+            //subtitle: const Text('Practica 3'),
+            onTap: () {
+              GlobalValues.login.setBool('login', false);
+              GlobalValues.session.setBool('session', false);
+              Navigator.pushNamed(context, '/login');
             },
           ),
         ],
